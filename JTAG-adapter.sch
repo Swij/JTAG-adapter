@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:JTAG-adapter-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -38,23 +39,12 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_02x03_Odd_Even J6
 U 1 1 5C3EFF74
-P 5550 3500
-F 0 "J6" H 5600 3817 50  0000 C CNN
-F 1 "6-pin Tag-Connect" H 5600 3726 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" H 5550 3500 50  0001 C CNN
-F 3 "~" H 5550 3500 50  0001 C CNN
-	1    5550 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_02x05_Odd_Even J2
-U 1 1 5C3F012F
-P 5550 2000
-F 0 "J2" H 5600 2417 50  0000 C CNN
-F 1 "10-pin ST-Link 0.1\"" H 5600 2326 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" H 5550 2000 50  0001 C CNN
-F 3 "~" H 5550 2000 50  0001 C CNN
-	1    5550 2000
+P 5350 2600
+F 0 "J6" H 5400 2917 50  0000 C CNN
+F 1 "6-pin Tag-Connect" H 5400 2826 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" H 5350 2600 50  0001 C CNN
+F 3 "~" H 5350 2600 50  0001 C CNN
+	1    5350 2600
 	1    0    0    -1  
 $EndComp
 Text Label 850  2450 0    50   ~ 0
@@ -93,25 +83,15 @@ Text Label 3200 3300 0    50   ~ 0
 SWDCLK
 Text Label 3200 3600 0    50   ~ 0
 nRESET
-Text Label 6000 1800 0    50   ~ 0
-SWDCLK
-Text Label 4750 1900 0    50   ~ 0
-SWIM
-Text Label 6000 1900 0    50   ~ 0
-SWDIO
-Text Label 4750 2000 0    50   ~ 0
-GND
-Text Label 6000 2000 0    50   ~ 0
-GND
-Text Label 5050 3500 0    50   ~ 0
+Text Label 4850 2600 0    50   ~ 0
 nRESET
-Text Label 5050 3600 0    50   ~ 0
+Text Label 4850 2700 0    50   ~ 0
 GND
-Text Label 5950 3400 0    50   ~ 0
+Text Label 5750 2500 0    50   ~ 0
 SWDIO
-Text Label 5950 3500 0    50   ~ 0
+Text Label 5750 2600 0    50   ~ 0
 SWDCLK
-Text Label 5950 3600 0    50   ~ 0
+Text Label 5750 2700 0    50   ~ 0
 SWO
 Text Label 3200 3400 0    50   ~ 0
 SWO
@@ -170,13 +150,11 @@ Wire Wire Line
 Wire Wire Line
 	3900 3500 3000 3500
 Wire Wire Line
-	5350 2100 4750 2100
+	4850 2500 5150 2500
 Wire Wire Line
-	5050 3400 5350 3400
+	5150 2600 4850 2600
 Wire Wire Line
-	5350 3500 5050 3500
-Wire Wire Line
-	5050 3600 5350 3600
+	4850 2700 5150 2700
 NoConn ~ 2500 3500
 Text Notes 850  2550 0    50   ~ 0
 Max 300mA
@@ -280,19 +258,17 @@ F 3 "" H 3900 5900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3900 5900 3900 6000
-Text Label 4750 1800 0    50   ~ 0
-nRESET
-Text Label 1450 5850 0    50   ~ 0
+Text Label 1350 5850 0    50   ~ 0
 J-Link_5V
 Wire Wire Line
-	1450 5850 1950 5850
+	1350 5850 1850 5850
 $Comp
 L Device:Jumper_NC_Small JP1
 U 1 1 5C4615C2
 P 3250 1550
 F 0 "JP1" H 3250 1671 50  0000 C CNN
 F 1 "~" H 3250 1671 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3250 1550 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 3250 1550 50  0001 C CNN
 F 3 "~" H 3250 1550 50  0001 C CNN
 	1    3250 1550
 	1    0    0    -1  
@@ -307,46 +283,32 @@ Wire Wire Line
 	3000 1750 3600 1750
 Text Label 3550 6500 0    50   ~ 0
 GND
-Text Label 4750 2200 0    50   ~ 0
-ST-Link_5V
-Wire Wire Line
-	4750 2200 5350 2200
-Text Label 6000 2200 0    50   ~ 0
-ST-Link_5V
-Text Label 6000 2100 0    50   ~ 0
-ST-Link_3V3
-Text Label 4750 2100 0    50   ~ 0
-ST-Link_3V3
-Wire Wire Line
-	5850 2100 6500 2100
-Wire Wire Line
-	5850 2200 6500 2200
 $Comp
-L Device:Jumper_NC_Small JP4
+L Jumper:SolderJumper_2_Bridged JP4
 U 1 1 5C48982D
-P 2050 5850
-F 0 "JP4" H 2050 5971 50  0000 C CNN
-F 1 "~" H 2050 5971 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2050 5850 50  0001 C CNN
-F 3 "~" H 2050 5850 50  0001 C CNN
-	1    2050 5850
+P 2000 5850
+F 0 "JP4" H 2000 5963 50  0000 C CNN
+F 1 "~" H 2000 5971 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 2000 5850 50  0001 C CNN
+F 3 "~" H 2000 5850 50  0001 C CNN
+	1    2000 5850
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Jumper_NC_Small JP6
+L Jumper:SolderJumper_2_Bridged JP6
 U 1 1 5C48B336
-P 2050 6150
-F 0 "JP6" H 2050 6271 50  0000 C CNN
-F 1 "~" H 2050 6271 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2050 6150 50  0001 C CNN
-F 3 "~" H 2050 6150 50  0001 C CNN
-	1    2050 6150
+P 2000 6150
+F 0 "JP6" H 2000 6263 50  0000 C CNN
+F 1 "~" H 2000 6271 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 2000 6150 50  0001 C CNN
+F 3 "~" H 2000 6150 50  0001 C CNN
+	1    2000 6150
 	1    0    0    -1  
 $EndComp
-Text Label 1450 6150 0    50   ~ 0
+Text Label 1350 6150 0    50   ~ 0
 ST-Link_5V
 Wire Wire Line
-	1450 6150 1950 6150
+	1350 6150 1850 6150
 Wire Wire Line
 	2150 5850 2450 5850
 Wire Wire Line
@@ -358,78 +320,9 @@ Wire Wire Line
 Connection ~ 2450 6000
 Wire Wire Line
 	2450 5850 2450 6000
-$Comp
-L Device:Jumper_NC_Small JP5
-U 1 1 5C49CDCF
-P 5000 6000
-F 0 "JP5" H 5000 6121 50  0000 C CNN
-F 1 "~" H 5000 6121 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5000 6000 50  0001 C CNN
-F 3 "~" H 5000 6000 50  0001 C CNN
-	1    5000 6000
-	1    0    0    -1  
-$EndComp
-Text Label 4350 6250 0    50   ~ 0
+Text Label 3300 5400 0    50   ~ 0
 ST-Link_3V3
-$Comp
-L Device:Jumper_NC_Small JP7
-U 1 1 5C4A2AEA
-P 5000 6250
-F 0 "JP7" H 5000 6371 50  0000 C CNN
-F 1 "~" H 5000 6371 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5000 6250 50  0001 C CNN
-F 3 "~" H 5000 6250 50  0001 C CNN
-	1    5000 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4350 6250 4900 6250
-Wire Wire Line
-	5100 6000 5250 6000
-Wire Wire Line
-	5100 6250 5250 6250
-Connection ~ 5250 6000
-Text Label 4300 1900 0    50   ~ 0
-SWO
-Wire Wire Line
-	4300 1900 5350 1900
-$Comp
-L Device:Jumper_NC_Small JP3
-U 1 1 5C4C539E
-P 5000 5750
-F 0 "JP3" H 5000 5871 50  0000 C CNN
-F 1 "~" H 5000 5871 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5000 5750 50  0001 C CNN
-F 3 "~" H 5000 5750 50  0001 C CNN
-	1    5000 5750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3900 6000 4900 6000
-Wire Wire Line
-	5250 6250 5250 6000
-Wire Wire Line
-	5100 5750 5250 5750
-$Comp
-L power:+5V #PWR0104
-U 1 1 5C4D3BE6
-P 4700 5700
-F 0 "#PWR0104" H 4700 5550 50  0001 C CNN
-F 1 "+5V" H 4715 5873 50  0000 C CNN
-F 2 "" H 4700 5700 50  0001 C CNN
-F 3 "" H 4700 5700 50  0001 C CNN
-	1    4700 5700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4700 5700 4700 5750
-Wire Wire Line
-	5250 5750 5250 6000
-Wire Wire Line
-	4700 5750 4900 5750
-Wire Wire Line
-	5250 6000 5550 6000
-Text Label 5550 6000 2    50   ~ 0
+Text Label 5400 6000 2    50   ~ 0
 VCC
 Text Label 3600 1850 2    50   ~ 0
 GND
@@ -459,7 +352,7 @@ Text Label 3600 2450 2    50   ~ 0
 GND
 Wire Wire Line
 	3000 2450 3600 2450
-Text Label 5050 3400 0    50   ~ 0
+Text Label 4850 2500 0    50   ~ 0
 VCC
 Wire Wire Line
 	850  2450 2500 2450
@@ -468,11 +361,11 @@ Legacy 20-pin JTAG/SWD
 Text Notes 2250 2900 0    100  ~ 0
 Cortex debug
 Wire Wire Line
-	5850 3400 6200 3400
+	5650 2500 6000 2500
 Wire Wire Line
-	5850 3500 6200 3500
+	5650 2600 6000 2600
 Wire Wire Line
-	5850 3600 6200 3600
+	5650 2700 6000 2700
 Wire Wire Line
 	3000 3200 3900 3200
 Wire Wire Line
@@ -483,22 +376,8 @@ Text Notes 3750 3100 0    50   ~ 0
 JTAG
 Wire Wire Line
 	3000 3600 3900 3600
-Text Notes 4150 1800 0    50   ~ 0
-Modification\nrequired
-Wire Wire Line
-	5850 2000 6500 2000
-Wire Wire Line
-	5850 1900 6500 1900
-Wire Wire Line
-	5850 1800 6500 1800
-Wire Wire Line
-	4750 2000 5350 2000
-Wire Wire Line
-	4750 1800 5350 1800
-Text Notes 4850 3100 0    100  ~ 0
+Text Notes 4650 2200 0    100  ~ 0
 Tag-Connect 6-pin
-Text Notes 4750 1450 0    100  ~ 0
-Chinese ST-Link v2
 Text Notes 3200 900  0    200  ~ 0
 Outputs
 Wire Notes Line
@@ -526,13 +405,13 @@ Inputs
 $Comp
 L Connector_Generic:Conn_02x10_Odd_Even J3
 U 1 1 5C573AA9
-P 9450 2000
-F 0 "J3" H 9500 2617 50  0000 C CNN
-F 1 "20-pin JTAG 0.1\"" H 9500 2526 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Horizontal" H 9450 2000 50  0001 C CNN
-F 3 "~" H 9450 2000 50  0001 C CNN
-	1    9450 2000
-	-1   0    0    -1  
+P 9350 2000
+F 0 "J3" H 9400 2617 50  0000 C CNN
+F 1 "20-pin JTAG 0.1\"" H 9400 2526 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Horizontal" H 9350 2000 50  0001 C CNN
+F 3 "~" H 9350 2000 50  0001 C CNN
+	1    9350 2000
+	1    0    0    -1  
 $EndComp
 Text Label 7500 2500 0    50   ~ 0
 J-Link_5V
@@ -592,7 +471,7 @@ U 1 1 5C573ACA
 P 9900 1600
 F 0 "JP2" H 9900 1721 50  0000 C CNN
 F 1 "~" H 9900 1721 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9900 1600 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 9900 1600 50  0001 C CNN
 F 3 "~" H 9900 1600 50  0001 C CNN
 	1    9900 1600
 	1    0    0    -1  
@@ -606,13 +485,13 @@ Legacy 20-pin JTAG/SWD
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J5
 U 1 1 5C576FFB
-P 9450 3450
-F 0 "J5" H 9500 3867 50  0000 C CNN
-F 1 "10-pin ST-Link 0.1\"" H 9500 3776 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Horizontal" H 9450 3450 50  0001 C CNN
-F 3 "~" H 9450 3450 50  0001 C CNN
-	1    9450 3450
-	-1   0    0    -1  
+P 9350 3450
+F 0 "J5" H 9400 3867 50  0000 C CNN
+F 1 "10-pin ST-Link 0.1\"" H 9400 3776 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Horizontal" H 9350 3450 50  0001 C CNN
+F 3 "~" H 9350 3450 50  0001 C CNN
+	1    9350 3450
+	1    0    0    -1  
 $EndComp
 Text Label 9800 3250 0    50   ~ 0
 SWDCLK
@@ -700,4 +579,39 @@ Text Label 10250 2500 2    50   ~ 0
 GND
 Wire Wire Line
 	9650 2500 10250 2500
+Wire Wire Line
+	4750 6000 5400 6000
+Wire Wire Line
+	3900 5400 3300 5400
+$Comp
+L Jumper:SolderJumper_2_Open JP3
+U 1 1 5C42138B
+P 4050 5400
+F 0 "JP3" H 4050 5513 50  0000 C CNN
+F 1 "~" H 4050 5514 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4050 5400 50  0001 C CNN
+F 3 "~" H 4050 5400 50  0001 C CNN
+	1    4050 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper_NC_Small JP5
+U 1 1 5C41B208
+P 4650 6000
+F 0 "JP5" H 4650 6121 50  0000 C CNN
+F 1 "~" H 4650 6121 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4650 6000 50  0001 C CNN
+F 3 "~" H 4650 6000 50  0001 C CNN
+	1    4650 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 5400 4400 5400
+Wire Wire Line
+	4400 5400 4400 6000
+Wire Wire Line
+	3900 6000 4400 6000
+Wire Wire Line
+	4400 6000 4550 6000
+Connection ~ 4400 6000
 $EndSCHEMATC
